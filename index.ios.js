@@ -5,17 +5,35 @@
  */
 
 import React, { Component } from 'react';
+
 import {
   AppRegistry,
   StyleSheet,
   Text,
   View
 } from 'react-native';
+import YouTube from 'react-native-youtube';
 
 class JustListenMusic extends Component {
   render() {
     return (
       <View style={styles.container}>
+      <YouTube
+      ref="youtubePlayer"
+      videoId="KVZ-P-ZI6W4"
+      play={true}
+      hidden={false}
+      playsInline={true}
+      loop={false}
+
+      onReady={(e)=>{this.setState({isReady: true})}}
+      onChangeState={(e)=>{this.setState({status: e.state})}}
+      onChangeQuality={(e)=>{this.setState({quality: e.quality})}}
+      onError={(e)=>{this.setState({error: e.error})}}
+      onProgress={(e)=>{this.setState({currentTime: e.currentTime, duration: e.duration})}}
+
+      style={{alignSelf: 'stretch', height: 300, backgroundColor: 'black', marginVertical: 10}}
+      />
         <Text style={styles.welcome}>
           Welcome to React Native!
         </Text>
