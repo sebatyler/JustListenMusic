@@ -1,0 +1,3 @@
+rootProject.name = 'JustListenMusic'
+
+include ':app'
