@@ -10,14 +10,14 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  ScrollView
 } from 'react-native';
 import YouTube from 'react-native-youtube';
 
 class JustListenMusic extends Component {
   render() {
     return (
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
       <YouTube
       ref="youtubePlayer"
       videoId="KVZ-P-ZI6W4"
@@ -44,7 +44,7 @@ class JustListenMusic extends Component {
           Press Cmd+R to reload,{'\n'}
           Cmd+D or shake for dev menu
         </Text>
-      </View>
+      </ScrollView>
     );
   }
 }
